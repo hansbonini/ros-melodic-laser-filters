@@ -54,7 +54,7 @@ build() {
 	[ -f /opt/ros/melodic/setup.bash ] && source /opt/ros/melodic/setup.bash
 
 	# Fix Boost Signals
-	sed -i -e 's/signals//g' laser_filters-release-release-melodic-laser_filters-${pkgver}-${_pkgver_patch}/CMakeLists.txt
+	sed -i -e 's/signals//g' ${_dir}/CMakeLists.txt
 	
 	# Create the build directory.
 	[ -d ${srcdir}/build ] || mkdir ${srcdir}/build
