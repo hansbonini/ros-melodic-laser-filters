@@ -53,6 +53,9 @@ build() {
 	source /usr/share/ros-build-tools/clear-ros-env.sh
 	[ -f /opt/ros/melodic/setup.bash ] && source /opt/ros/melodic/setup.bash
 
+	# Fix Boost Signals
+	sed -i -e 's/signals//g' laser_filters-release-release-melodic-laser_filters-1.8.6-0/CMakeLists.txt
+	
 	# Create the build directory.
 	[ -d ${srcdir}/build ] || mkdir ${srcdir}/build
 	cd ${srcdir}/build
